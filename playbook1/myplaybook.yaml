@@ -1,0 +1,10 @@
+---
+- name: Prepare Debian
+  hosts: vm
+  remote_user: ubuntu
+  become: yes
+  tasks:
+  - name: Install debian packages
+    apt:
+      update_cache: yes
+      name: ['unzip', 'wget', 'curl', 'nano', 'apparmor-profiles', 'apparmor-utils', 'udev']
